@@ -1,0 +1,37 @@
+初始
+
+
+git init 初始化一个本地git库
+git remote add origin {ssh} 添加远程库
+git remote show 查看是否添加成功远程库
+ls -a 查看全部文件,包括隐藏文件
+rm -rf 删除这个隐藏.git文件,也就是将当前文件夹恢复普通,不再是git库.
+
+项目常用
+
+
+git fetch -p 防止缓存,查看远程库的更新
+git branch -a 查看分支
+git branch -D {本地分支名} 删除本地分支
+git status 查看当前本地分支修改
+git add . 添加当前目录的所有文件到暂存区
+git commit -m "xxx" 提交暂存区到仓库区
+git push origin {本地分支名}:{远程分支名} 推送到远程库,如本地分支名为空则清空远程分支
+git checkout  切换分支
+git checkout -b {分支名} 创建并切换到本地分支
+git merge {远程库名一般默认origin}/{要合并的分支名}
+git checkout --track origin/branch_name 基于远端分支创建本地分支
+
+版本回退
+
+
+git reset --hard HEAD^         回退到上个版本
+git reset --hard HEAD~3        回退到前3次提交之前，以此类推，回退到n次提交之前
+git reset --hard commit_id     退到/进到 指定commit的sha码
+
+强推到远程：
+git push origin HEAD --force
+
+git看不到远程某个分支的办法
+
+git fetch origin xxx //xxx代表分支的名字
